@@ -1,0 +1,56 @@
+.container-reset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+.reset-password-box {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.reset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.yellow-button {
+    background-color: #ffc107;
+    /* jaune */
+    color: #212121;
+    font-weight: bold;
+}
+
+.yellow-button:hover {
+    background-color: #ffb300;
+}
+
+.snackbar-success {
+    background-color: #4caf50 !important;
+    /* Vert succès */
+    color: white !important;
+}
+
+.snackbar-error {
+    background-color: #f44336 !important;
+    /* Rouge erreur */
+    color: white !important;
+}

@@ -1,0 +1,52 @@
+.sidenav-container {
+    height: 100vh;
+}
+
+.sidenav {
+    width: 250px;
+    background-color: white;
+    margin-top: 20px;
+    height: 700px;
+    /* Ajoute un espace de 20px en bas */
+}
+
+.toolbar {
+    text-align: center;
+    font-weight: bold;
+}
+
+mat-nav-list a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+mat-nav-list a:hover {
+    background: rgb(250, 239, 26);
+}
+
+mat-icon {
+    margin-right: 10px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.sidenav-container {
+    color: hsl(0, 0%, 100%);
+    padding: 10px 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    /* margin-top: 20px; */
+}
+
+.content {
+    margin-left: 10px;
+    /* Ajuste la valeur selon la largeur de ta sidebar */
+    padding: 10px;
+    /* Optionnel, pour ajouter du padding autour du contenu */
+}

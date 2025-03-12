@@ -1,0 +1,8 @@
+.bg-image {
+    background-size: cover;
+    /* Pour couvrir toute la section */
+    background-position: center;
+    /* Pour centrer l'image */
+    height: 100vh;
+    /* Assure que la section occupe toute la hauteur de la fenêtre */
+}

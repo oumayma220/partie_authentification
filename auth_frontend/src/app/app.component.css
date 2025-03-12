@@ -1,0 +1,23 @@
+.btn-custom {
+    background-color: #f9e800;
+    color: #000;
+    /* couleur du texte */
+}
+
+.btn-custom:hover {
+    background-color: #f7e400;
+    /* une teinte un peu plus foncée pour le survol */
+    color: #000;
+    /* Rendre la barre de navigation plus compacte sur les petits écrans */
+    .navbar-nav {
+        text-align: center;
+    }
+    @media (max-width: 991px) {
+        .navbar-nav {
+            margin-top: 10px;
+        }
+        .navbar-brand img {
+            height: 30px;
+        }
+    }
+}

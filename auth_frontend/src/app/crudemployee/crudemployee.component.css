@@ -1,0 +1,64 @@
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.table-container {
+    margin: 20px;
+    overflow-x: auto;
+    /* Permet de faire défiler horizontalement sur les petits écrans */
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+mat-header-cell,
+mat-cell {
+    text-align: left;
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    /* Sur les petits écrans */
+    .table-container {
+        margin: 10px;
+    }
+    table {
+        font-size: 14px;
+        /* Réduit la taille du texte pour mieux s'adapter */
+    }
+    /* Pour les actions dans la table */
+    mat-icon-button {
+        font-size: 20px;
+        /* Réduit la taille des boutons */
+    }
+    mat-paginator {
+        font-size: 12px;
+        /* Réduit la taille du texte du paginator */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Sur les écrans très petits, comme les téléphones */
+    mat-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .spacer {
+        display: none;
+    }
+    mat-icon-button {
+        padding: 8px;
+    }
+    table {
+        font-size: 12px;
+        /* Réduit encore la taille du texte */
+    }
+}

@@ -1,0 +1,22 @@
+.card {
+    border-radius: 12px;
+}
+
+.input-group-text {
+    background-color: #f8f9fa;
+    border-right: none;
+}
+
+.form-control {
+    border-left: none;
+}
+
+.btn-primary {
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.alert {
+    border-radius: 8px;
+    text-align: center;
+}

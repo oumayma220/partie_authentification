@@ -1,0 +1,61 @@
+<mat-card>
+    <mat-toolbar>
+        <span>Liste des employés</span>
+        <span class="spacer"></span>
+        <!-- Ajoute cet élément pour espacer -->
+        <button mat-button style="color: rgb(3, 3, 95);" (click)="openRegisterDialog()">
+            <mat-icon>add</mat-icon> Ajouter
+        </button>
+    </mat-toolbar>
+
+    <div class="table-container">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Firstname Column -->
+            <ng-container matColumnDef="firstname">
+                <th mat-header-cell *matHeaderCellDef> Prénom </th>
+                <td mat-cell *matCellDef="let employee"> {{ employee.firstname }} </td>
+            </ng-container>
+
+            <!-- Lastname Column -->
+            <ng-container matColumnDef="lastname">
+                <th mat-header-cell *matHeaderCellDef> Nom </th>
+                <td mat-cell *matCellDef="let employee"> {{ employee.lastname }} </td>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef> Email </th>
+                <td mat-cell *matCellDef="let employee"> {{ employee.email }} </td>
+            </ng-container>
+
+            <!-- Date de création Column -->
+            <ng-container matColumnDef="createdDate">
+                <th mat-header-cell *matHeaderCellDef> Date de création </th>
+                <td mat-cell *matCellDef="let employee"> {{ employee.createdDate | date:'yyyy-MM-dd' }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                <td mat-cell *matCellDef="let employee">
+                    <!-- Button Modifier -->
+                    <button mat-icon-button style="color: rgb(2, 67, 15);" (click)="openEditDialog(employee)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <!-- Button Supprimer -->
+                    <button mat-icon-button style="color: rgb(174, 9, 9);" (click)="onDisable(employee.id)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <!-- Table Header and Row -->
+            <thead>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            </thead>
+            <tbody>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </tbody>
+        </table>
+        <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</mat-card>

@@ -1,0 +1,38 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+        <h2 class="text-center mb-4">Inscription</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">Prénom:</label>
+                <input id="firstname" class="form-control" formControlName="firstname" placeholder="Votre prénom" />
+                <div class="text-danger" *ngIf="submitted && registerForm.controls['firstname'].invalid">
+                    Prénom est requis.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Nom:</label>
+                <input id="lastname" class="form-control" formControlName="lastname" placeholder="Votre nom" />
+                <div class="text-danger" *ngIf="submitted && registerForm.controls['lastname'].invalid">
+                    Nom est requis.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input id="email" type="email" class="form-control" formControlName="email" placeholder="Votre email" />
+                <div class="text-danger" *ngIf="submitted && registerForm.controls['email'].invalid">
+                    <span *ngIf="registerForm.controls['email'].errors?.['required']">Email est requis.</span>
+                    <span *ngIf="registerForm.controls['email'].errors?.['email']">Format invalide.</span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe:</label>
+                <input id="password" type="password" class="form-control" formControlName="password" placeholder="Votre mot de passe" />
+                <div class="text-danger" *ngIf="submitted && registerForm.controls['password'].invalid">
+                    <span *ngIf="registerForm.controls['password'].errors?.['required']">Mot de passe est requis.</span>
+                    <span *ngIf="registerForm.controls['password'].errors?.['minlength']">Doit contenir au moins 6 caractères.</span>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">S'inscrire</button>
+        </form>
+    </div>
+</div>

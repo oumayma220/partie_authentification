@@ -1,0 +1,61 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<section class="vh-100">
+    <div class="container-fluid h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-lg rounded-4" style="max-width: 500px; border: none; height: 550px;">
+                    <div class="card-body">
+                        <form (submit)="login($event)" #loginForm="ngForm">
+                            <h1 class="text-center text-yellow-400 font-bold text-3xl mb-4">Content de te revoir</h1>
+                            <h4 class="text-center mb-4">Veuillez entrer vos coordonnées.</h4>
+
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Entrez une adresse email valide" [(ngModel)]="email" name="email" required email #emailField="ngModel" />
+                                <label class="form-label" for="form3Example3">Adresse Email</label>
+                                <div *ngIf="emailField.invalid && emailField.touched" class="text-danger">
+                                    <div *ngIf="emailField.errors?.['required']">
+                                        L'email est requis.
+                                    </div>
+                                    <div *ngIf="emailField.errors?.['email'] && !emailField.errors?.['required']">
+                                        L'adresse email doit être dans un format valide.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Password input -->
+                            <div data-mdb-input-init class="form-outline mb-4">
+                                <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Entrez votre mot de passe" [(ngModel)]="password" name="password" [ngModelOptions]="{standalone: true}" required #passwordField="ngModel" />
+                                <label class="form-label" for="form3Example4">Mot de Passe</label>
+                                <!-- Password error message -->
+                                <div *ngIf="passwordField.invalid && passwordField.touched" class="text-danger">
+                                    Le mot de passe est requis.
+                                </div>
+                            </div>
+
+                            <!-- Remember Me and Forgot Password -->
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <!-- Checkbox -->
+                                <div class="form-check mb-0">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                    <label class="form-check-label" for="form2Example3">
+                                        Se souvenir de moi
+                                    </label>
+                                </div>
+                                <a href="#!" class="text-body" routerLink="/requestresetcode">Mot de passe oublié ?</a>
+                            </div>
+
+                            <div class="text-center text-lg-start mt-4 pt-2">
+                                <button class="btn btn-warning text-blue-700 btn-lg" type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+                                <p class="small fw-bold mt-2 pt-1 mb-0">Pas encore de compte ? <a routerLink="/registeruser" class="link-danger">S'inscrire</a></p>
+                            </div>
+                            <pre>
+                                
+                            </pre>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

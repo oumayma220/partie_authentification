@@ -1,0 +1,26 @@
+<section class="container-reset">
+    <div class="reset-password-box mat-elevation-z8">
+        <h2 class="title">Réinitialisation de mot de passe</h2>
+
+        <form [formGroup]="resetCodeForm" (ngSubmit)="sendResetCode()" class="reset-form">
+
+            <!-- Email Field -->
+            <mat-form-field appearance="outline" class="full-width">
+                <mat-label>Adresse Email</mat-label>
+                <input matInput type="email" formControlName="email" placeholder="Entrez votre adresse email" />
+                <mat-error *ngIf="resetCodeForm.get('email')?.hasError('required')">
+                    L'email est requis.
+                </mat-error>
+                <mat-error *ngIf="resetCodeForm.get('email')?.hasError('email')">
+                    Veuillez entrer un email valide.
+                </mat-error>
+            </mat-form-field>
+
+            <!-- Submit Button -->
+            <button mat-raised-button color="primary" type="submit" [disabled]="resetCodeForm.invalid" class="yellow-button">
+          Envoyer le code
+        </button>
+
+        </form>
+    </div>
+</section>

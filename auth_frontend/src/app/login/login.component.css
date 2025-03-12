@@ -1,0 +1,89 @@
+/* Centrer l'image en arrière-plan */
+
+.vh-100 {
+    /* background-image: url('../../assets/dd.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Poppins';
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 51px;
+    text-align: center;
+    color: #030303;
+}
+
+h4 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #636364;
+}
+
+#form3Example3,
+#form3Example4 {
+    width: 100%;
+    /* Utilise toute la largeur possible */
+    margin-bottom: 1rem;
+}
+
+.btn-warning {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+}
+
+.img-fluid {
+    display: none;
+}
+
+
+/* Pour les petits écrans (mobiles) */
+
+@media (max-width: 576px) {
+    .card {
+        max-width: 100%;
+        /* Assurez-vous que la carte occupe toute la largeur */
+        height: auto;
+        /* Ajustez la hauteur de la carte */
+    }
+    h1 {
+        font-size: 28px;
+        /* Ajustez la taille du titre pour les petits écrans */
+    }
+    h4 {
+        font-size: 12px;
+        /* Réduisez la taille du texte pour les petits écrans */
+    }
+    .btn-warning {
+        width: 100%;
+        /* Assurez-vous que le bouton prend toute la largeur */
+    }
+}
+
+
+/* Pour les écrans de taille moyenne (tablettes et petits écrans de bureau) */
+
+
+/* Pour les grands écrans (ordinateurs de bureau) */
+
+@media (min-width: 1200px) {
+    .card {
+        max-width: 500px;
+        /* Maintenez la taille maximale pour les écrans plus grands */
+    }
+}
