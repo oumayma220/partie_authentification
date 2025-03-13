@@ -13,6 +13,7 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class AuthenticationService {
    private apiUrl = 'http://localhost:8088/api/v1/auth';
+   private api ='http://localhost:8088/api/v1/authenticated'
    constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   authenticate(request: AuthenticationRequest): Observable<AuthenticationResponse> {
@@ -22,7 +23,7 @@ export class AuthenticationService {
     if (isPlatformBrowser(this.platformId)) {  // Check if running in browser
       const token = localStorage.getItem('accessToken');  
       const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-      return this.http.get<User>(`${this.apiUrl}/me`, { headers });
+      return this.http.get<User>(`${this.api}/me`, { headers });
     } else {
       // Handle the case when not in the browser (SSR)
       return new Observable<User>(); // Return an empty observable or handle the case appropriately
@@ -51,6 +52,12 @@ registerClient(request: RegistrationRequest): Observable<any> {
 }
 activateAccount(token: string): Observable<any> {
   return this.http.get(`${this.apiUrl}/activate-account?token=${token}`);
+}
+isLoggedIn(): boolean {
+  if (isPlatformBrowser(this.platformId)) {
+    return !!localStorage.getItem('accessToken');
+  }
+  return false; 
 }
 
   

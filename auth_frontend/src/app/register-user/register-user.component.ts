@@ -26,7 +26,7 @@ export class RegisterUserComponent {
     
     
   }
-
+ 
   onRegister() {
     this.submitted = true;
 

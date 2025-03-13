@@ -81,11 +81,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(service.convertToDTO(user));
     }
 
-    @GetMapping("/me")
-    public ResponseEntity<UserDTO> getPrincipal() {
-        User user = service.getPrincipal();
-        return ResponseEntity.ok(service.convertToDTO(user));
-    }
+
 
 
 

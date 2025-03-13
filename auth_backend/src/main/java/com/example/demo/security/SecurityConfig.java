@@ -30,6 +30,7 @@ http
                 req.requestMatchers(
                         "/auth/**"
                 ).permitAll()
+
                         .requestMatchers("/admin/**").hasAuthority("ADMIN")
 
 
